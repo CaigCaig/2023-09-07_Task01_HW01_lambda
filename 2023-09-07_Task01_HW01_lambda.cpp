@@ -12,12 +12,8 @@ int main()
 
 	auto arr = { 4, 7, 9, 14, 12 };
 
-	struct {
-		void operator()(int i) const { cout << i << ' '; }
-	} in_show;
-
 	cout << "Входные данные: ";
-	for_each(arr.begin(), arr.end(), in_show);
+	for_each(arr.begin(), arr.end(), [](const int& i) {cout << i << ' '; });
 	cout << endl;
 
 	cout << "Выходные данные: ";
