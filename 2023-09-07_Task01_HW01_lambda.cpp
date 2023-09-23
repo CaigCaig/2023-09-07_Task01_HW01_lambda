@@ -20,9 +20,9 @@ int main()
 	for_each(arr.begin(), arr.end(), in_show);
 	cout << endl;
 
-	struct {
-		void operator()(int i) const
-		{ 
+	cout << "Выходные данные: ";
+	for_each(arr.begin(), arr.end(), [](const int& i)
+		{
 			switch (i % 2)
 			{
 			case 0:
@@ -31,11 +31,7 @@ int main()
 			case 1:
 				cout << i * 3 << ' ';
 			}
-		}
-	} out_show;
-
-	cout << "Выходные данные: ";
-	for_each(arr.begin(), arr.end(), out_show);
+		});
 	cout << endl;
 
 	system("pause");
